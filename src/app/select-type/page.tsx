@@ -37,7 +37,7 @@ export default function ComparePage() {
             return (
               <div
                 key={track}
-                className={`flex flex-col rounded-lg border-t-4 bg-white p-6 ${copy?.accent ?? "border-zinc-300"}`}
+                className={`flex h-full flex-col rounded-lg border-t-4 bg-white p-6 ${copy?.accent ?? "border-zinc-300"}`}
               >
                 <span className="text-xs font-semibold tracking-wide text-zinc-400">
                   {track.toUpperCase()}-BASED CHILD CARE
@@ -47,7 +47,7 @@ export default function ComparePage() {
                 </h2>
 
                 <dl className="mt-4 flex flex-col divide-y divide-zinc-100 rounded-md border border-zinc-100 text-sm">
-                  <div className={`px-3 py-2 ${(copy?.location ?? "").length > 50 ? "flex flex-col gap-1" : "flex justify-between"}`}>
+                  <div className="flex flex-col gap-1 px-3 py-2">
                     <dt className="text-zinc-500">Location</dt>
                     <dd className="font-medium text-zinc-800">{copy?.location ?? "-"}</dd>
                   </div>
@@ -68,6 +68,8 @@ export default function ComparePage() {
                     <dd className="font-medium text-zinc-800">{steps.length}</dd>
                   </div>
                 </dl>
+
+                <div className="flex-1" />
 
                 <Link
                   href={`/pathway/${CITY}/${encodeURIComponent(track)}`}
